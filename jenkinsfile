@@ -11,6 +11,7 @@ node {
                 sh "npm run build:ssr"
         }
         stage('Deploy'){
-                sh "pm2 restart all --update-env"
+                //sh "pm2 restart all --update-env"
+                sh "pm2 start 'ng serve' --name angular-ssr-starter"
         }
 }
